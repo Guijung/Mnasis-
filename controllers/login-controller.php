@@ -1,4 +1,10 @@
 <?php
+// Declaration des constantes
+define('MAIL_ERROR_WRONG', 'Le format de l\'email est invalid' );
+define('MAIL_ERROR_EMPTY', 'le champs email n\'est pas complété');
+define('PASSWORD_ERROR_EMPTY', 'le champ password n\'est pas complété');
+define('LOGIN_ERROR', 'le mot de passe n\'est pas valide');
+
 $formErrors = [];
 //Vérification du formulaire de connexion
 if(isset($_POST['login'])){

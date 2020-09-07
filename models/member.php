@@ -16,7 +16,7 @@ class users{
      *
      * @var string
      */
-    private $table = SQL_PREFIX . 'users`';
+    private $table = SQL_PREFIX . 'ehpad`';
 //methode magique :Crée une instance PDO qui représente une connexion à la base 
 //le constructeur initialise des propriétés à l'objet.
     public function __construct()

@@ -1,33 +1,31 @@
 body {
   background-color: #16619c;
-
 }
-
-.logo {
- background-color: #16619c;
- }
+.dropdown-item {
+background-color:#16619c;
+}
 .nav-link0 {
-  font-family: Luciole, Arial, Helvetica, sans-serif;
+  font-family: "Luciole", Arial, Helvetica, sans-serif;
   font-size: 22px;
   color: #c7c7bf;
 }
 .nav-link1 {
-  font-family: Luciole, Arial, Helvetica, sans-serif;
+  font-family: "Luciole", Arial, Helvetica, sans-serif;
   font-size: 22px;
   color: #c7c7bf;
 }
 .nav-link2 {
-  font-family: Luciole, Arial, Helvetica, sans-serif;
+  font-family: "Luciole", Arial, Helvetica, sans-serif;
   font-size: 22px;
   color: #8cd0e1;
 }
 .nav-link3 {
-  font-family: Luciole, Arial, Helvetica, sans-serif;
+  font-family: "Luciole", Arial, Helvetica, sans-serif;
   font-size: 22px;
   color: #EF7E8E;
 }
 .nav-link4 {
-  font-family: Luciole, Arial, Helvetica, sans-serif;
+  font-family: "Luciole", Arial, Helvetica, sans-serif;
   font-size: 22px;
   color: #dda169;
 }

@@ -1,6 +1,13 @@
 <?php
-$formErrors = [];
-//Vérification du formulaire d'inscription
+define('MAIL_ERROR_WRONG', 'le mail n\'est pas conforme');
+define('MAIL_ERROR_EMPTY','le champs email n\'est pas complété');
+define('NAME_ERROR_EMPTY','Le champs nom n\'est pas complété');
+define('PASSWORD_ERROR_EMPTY','le  password n\'est pas renseigné');
+define('PASSWORDVERIFY_ERROR_EMPTY','Veuillez confirmez votre mot de passe');
+define('PASSWORD_ERROR_NOTEQUAL', 'Veuillez saisir le même mot de passe');
+define('USERNAME_ERROR_ALREADYUSED', 'Le pseudo n\'est pas disponible');
+define('MAIL_ERROR_ALREADYUSED', 'Le mail n\'est pas disponible');
+//Vérification du formulaire d'inscription/ register=nom du bouton de validation
 if(isset($_POST['register'])){
     $user = new users();
     /**
@@ -17,12 +24,12 @@ if(isset($_POST['register'])){
     }else{
         $formErrors['mail'] = MAIL_ERROR_EMPTY;
     }
-
-    if(!empty($_POST['username'])){
+}
+if(!empty($_POST['name'])){
         //J'hydrate mon instance d'objet user
-        $user->username = htmlspecialchars($_POST['username']);
+        $user->name = htmlspecialchars($_POST['name']);
     }else{
-        $formErrors['username'] = USERNAME_ERROR_EMPTY;
+        $formErrors['name'] = NAME_ERROR_EMPTY;
     }
 
     if(empty($_POST['password'])){
@@ -46,28 +53,28 @@ if(isset($_POST['register'])){
     if(empty($formErrors)){
         $isOk = true;
         //On vérifie si le pseudo est libre
-        if($user->checkUserUnavailabilityByFieldName(['username'])){
-            $formErrors['username'] = USERNAME_ERROR_ALREADYUSED;
-            $isOk = false;
-        }
-        //On vérifie si le mail est libre
-        if($user->checkUserUnavailabilityByFieldName(['mail'])){
-            $formErrors['mail'] = MAIL_ERROR_ALREADYUSED;
-            $isOk = false;
-        }
+        // if($user->checkUserUnavailabilityByFieldName(['name'])){
+        //     $formErrors['username'] = USERNAME_ERROR_ALREADYUSED;
+        //     $isOk = false;
+        // }
+        // //On vérifie si le mail est libre
+        // if($user->checkUserUnavailabilityByFieldName(['mail'])){
+        //     $formErrors['mail'] = MAIL_ERROR_ALREADYUSED;
+        //     $isOk = false;
+        // }
         //Si c'est bon on ajoute l'utilisateur
         if($isOk){
             $user->addUser();
         }
     }
-}
+
 //Traitement de la demande AJAX
 if(isset($_POST['fieldValue'])){
     //On vérifie que l'on a bien envoyé des données en POST
     if(!empty($_POST['fieldValue']) && !empty($_POST['fieldName'])){
         //On inclut les bons fichiers car dans ce contexte ils ne sont pas connu.
-        include_once '../config.php';
-        include_once '../models/members.php';
+        include_once './config.php';
+        include_once './models/members.php';
         $user = new users();
         $input = htmlspecialchars($_POST['fieldName']);
         $user->$input = htmlspecialchars($_POST['fieldValue']);
