@@ -35,13 +35,14 @@ include 'parts/header.php';
           <div class="form-group col-12 text-white">
             <label for="inputmail">Email</label>
             <input type="mail" class="form-control" id="email" name="mail">
-          </div>
-          <!--affiche erreur-->
-          <?php if (isset($formErrors['mail'])) { ?>
+            <?php if (isset($formErrors['mail'])) { ?>
             <p class="text-danger"><?= $formErrors['mail'] ?></p>
           <?php } else { ?>
             <small id="passwordHelp" class="form-text text-muted">Merci de renseigner votre adresse messagerie</small>
           <?php } ?>
+          </div>
+          <!--affiche erreur-->
+         
         </div>
     </div>
     <div class="form-check mb-2 mr-sm-2">

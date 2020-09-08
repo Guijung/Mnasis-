@@ -3,11 +3,10 @@ include 'models/member.php';
 include 'controllers/login-controller.php';
 include 'parts/header.php';
 ?>
-
 <!-- Start container
 le container fluid occupe 100% de la page -->
+<h1>connexion</h1>
 <div class="container-fluid">
-  <h1 class="text-white text-center">Créer son compte</h1>
   <div class="row">
     <!-- Start side image -->
     <div class="col-2">
@@ -16,33 +15,32 @@ le container fluid occupe 100% de la page -->
     <!-- End side image -->
     <!-- Start form -->
     <div class="col-10">
-    <form action="suscribe-members.php" method="POST">
-     
- <div class="form-row">
-          <div class="form-group col-6 text-white">
-            <label for="inputpassword">Pseudo</label>
-            <input type="login" class="form-control" id="inputLogin">
-          </div>
+      <form method="post">
+        <div class="form-group text-white text-center">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" name="email" required>
+          <?php if (isset($formErrors['mail'])) { ?>
+            <p class="text-danger"><?= $formErrors['mail'] ?></p>
+          <?php } else { ?>
+            <small id="emaildHelp" class="form-text text-muted">Merci de renseigner votre adresse messagerie</small>
+          <?php } ?>
+          <div class="invalid-feedback">Veuillez renseigner un email valide.</div>
         </div>
-        <!--end nickname field -->
-       <!-- Start password field -->
-        <div class="form-row">
-          <div class="form-group col-6 text-white">
-            <label for="inputpassword">Mot de passe</label>
-            <input type="password" class="form-control" id="inputPassword">
-          </div>
-         <!-- End password field -->
-      <button type="submit" class="btn btn-primary justify-center" href="count.php">Se connecter</button>
-      </form><!--fin form post-->
-    </div><!--fin div password-->
-    
+        <div class="form-group text-white text-center">
+          <label for="password">Mot de passe</label>
+          <input type="password" class="form-control" id="password" name="password">
+          <?php if (isset($formErrors['password'])) { ?>
+            <p class="text-danger"><?= $formErrors['password'] ?></p>
+          <?php } else { ?>
+            <small id="passwordHelp" class="form-text text-muted">Merci de renseigner votre mot de passe</small>
+          <?php } ?>
+          <div class="invalid-feedback">Veuillez renseigner un mot de passe valide</div>
+          <small class="text-muted">Le mot de passe doit contenir au moins 8 caractères.</small>
+        </div>
+        <button class="btn btn-primary" type="submit">S'identifier</button>
+      </form>
+    </div>
   </div>
-
 </div>
 <!-- End container -->
 <?php include 'parts/footer.php';
-
-
-
-
-

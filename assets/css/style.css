@@ -1,6 +1,14 @@
 body {
   background-color: #16619c;
 }
+h1 {
+  color:#dda169;
+  text-align: center;
+}
+/*.container-fluid{
+  display: flex;
+  justify-content:space-around;
+}*/
 .dropdown-item {
 background-color:#16619c;
 }

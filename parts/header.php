@@ -12,7 +12,7 @@
     <div class="container ">
       <diV class="logo">
         <a class="navbar-brand" href="index.php">
-          <img src="./assets/img/logov1.png" alt="logo">
+          <img src="./assets/img/logov4.png" alt="logo">
         </a>
       </diV>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,7 +37,7 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="./login.php">Connexion</a>
-              <a class="dropdown-item" href="./subscribe-members.php">inscription</a>
+              <a class="dropdown-item" href="./register-ehpad.php">inscription</a>
           </li>
         </ul>
       </div>

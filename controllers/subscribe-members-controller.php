@@ -5,6 +5,7 @@ define('NAME_ERROR_EMPTY','Le champs nom n\'est pas complété');
 define('PASSWORD_ERROR_EMPTY','le  password n\'est pas renseigné');
 define('PASSWORDVERIFY_ERROR_EMPTY','Veuillez confirmez votre mot de passe');
 define('PASSWORD_ERROR_NOTEQUAL', 'Veuillez saisir le même mot de passe');
+define('CITY_ERROR_EMPTY','le champs ville n\'est pas complété');
 define('USERNAME_ERROR_ALREADYUSED', 'Le pseudo n\'est pas disponible');
 define('MAIL_ERROR_ALREADYUSED', 'Le mail n\'est pas disponible');
 //Vérification du formulaire d'inscription/ register=nom du bouton de validation
@@ -49,19 +50,21 @@ if(!empty($_POST['name'])){
             $formErrors['password'] = $formErrors['passwordVerify'] = PASSWORD_ERROR_NOTEQUAL;
         }
     }
+    if(!empty($_POST['city'])){
+         $user->city = htmlspecialchars($_POST['city']);        
+    }else{
+        $formErrors['city'] = CITY_ERROR_EMPTY;
+    }
+
 
     if(empty($formErrors)){
         $isOk = true;
-        //On vérifie si le pseudo est libre
-        // if($user->checkUserUnavailabilityByFieldName(['name'])){
-        //     $formErrors['username'] = USERNAME_ERROR_ALREADYUSED;
-        //     $isOk = false;
-        // }
-        // //On vérifie si le mail est libre
-        // if($user->checkUserUnavailabilityByFieldName(['mail'])){
-        //     $formErrors['mail'] = MAIL_ERROR_ALREADYUSED;
-        //     $isOk = false;
-        // }
+       
+        //On vérifie si le mail est libre
+        if($user->checkUserUnavailabilityByFieldName(['mail'])){
+            $formErrors['mail'] = MAIL_ERROR_ALREADYUSED;
+           $isOk = false;
+        }
         //Si c'est bon on ajoute l'utilisateur
         if($isOk){
             $user->addUser();
