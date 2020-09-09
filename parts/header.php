@@ -21,15 +21,15 @@
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav d-flex justify-content-around align-items-sm-baseline ml-auto w-100">
           <li class="nav-item active">
-            <a class="nav-link0 text-white" href="index.php">Accueil
+            <a class="nav-link0 text-white" href="index.php">
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item text-center">
-            <a class="nav-link2" href="#">Tchat</a>
+            <a class="nav-link2" href="#">Envoyer un message </a>
           </li>
           <li class="nav-item text-center">
-            <a class="nav-link3" href="#">Jeux</a>
+            <a class="nav-link3" href="#">Connexion profil</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link4 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

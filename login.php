@@ -14,9 +14,9 @@ le container fluid occupe 100% de la page -->
     </div>
     <!-- End side image -->
     <!-- Start form -->
-    <div class="col-10">
+    <div class="col-8">
       <form method="post">
-        <div class="form-group text-white">
+        <div class="form-group text-primary">
           <label for="email">Email</label>
           <input type="email" class="form-control" id="email" name="email" required>
           <?php if (isset($formErrors['mail'])) { ?>
@@ -26,7 +26,7 @@ le container fluid occupe 100% de la page -->
           <?php } ?>
           <div class="invalid-feedback">Veuillez renseigner un email valide.</div>
         </div>
-        <div class="form-group text-white">
+        <div class="form-group text-primary">
           <label for="password">Mot de passe</label>
           <input type="password" class="form-control" id="password" name="password">
           <?php if (isset($formErrors['password'])) { ?>

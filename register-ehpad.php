@@ -9,9 +9,12 @@ include 'parts/header.php';
 <!-- Start container
 le container fluid occupe 100% de la page -->
 <h1>Créez votre compte</h1>
-<div class="container-fluid text-white text-center">
+<div class="container-fluid text-black text-center">
+<div class="col-4">
+    <img src="./assets/img/Mnesismess2.png" />
+  </div>
   <form action="register-ehpad.php" method="post">
-    <div class="form-group  col-8 text-white text-center">
+    <div class="form-group  col-8 text-primary text-center">
       <label for="name">Nom de l'établissement</label>
       <input type="text" class="form-control" id="name" name="name"/>
       <?php if (isset($formErrors['name'])) { ?>
@@ -59,9 +62,7 @@ le container fluid occupe 100% de la page -->
     </div>
     <button class="btn btn-primary" type="submit" name="register">S'inscrire</button>
   </form>
-  <div class="col-4">
-    <img src="./assets/img/Mnesismess2.png" />
-  </div>
+ 
 </div>
 <!-- End container -->
 <?php include 'parts/footer.php';
