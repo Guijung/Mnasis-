@@ -5,12 +5,16 @@ h1 {
   color:#dda169;
   text-align: center;
 }
+/*.navbar {
+  display: inline-flex;
+  justify-content: space-around;
+}
 /*.container-fluid{
   display: flex;
   justify-content:space-around;
 }*/
 .dropdown-item {
-background-color:#16619c;
+background-color: #dda169;
 }
 .nav-link0 {
   font-family: "Luciole", Arial, Helvetica, sans-serif;

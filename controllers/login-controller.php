@@ -8,16 +8,16 @@ define('LOGIN_ERROR', 'le mot de passe n\'est pas valide');
 $formErrors = [];
 //Vérification du formulaire de connexion
 if(isset($_POST['login'])){
-    $user = new users();
-    if(!empty($_POST['mail'])){
-        if(filter_var($_POST['mail'],FILTER_VALIDATE_EMAIL)){
-            //J'hydrate mon instance d'objet user
-            $user->mail = htmlspecialchars($_POST['mail']);
+    $ehpad = new ehpad();
+    if(!empty($_POST['email'])){
+        if(filter_var($_POST['email'],FILTER_VALIDATE_EMAIL)){
+            //J'hydrate mon instance d'objet ehpad
+            $Ehpad->mail = htmlspecialchars($_POST['email']);
         }else{
-            $formErrors['mail'] = MAIL_ERROR_WRONG;
+            $formErrors['email'] = MAIL_ERROR_WRONG;
         }
     }else{
-        $formErrors['mail'] = MAIL_ERROR_EMPTY;
+        $formErrors['email'] = MAIL_ERROR_EMPTY;
     }
 
     if(empty($_POST['password'])){        
@@ -26,19 +26,19 @@ if(isset($_POST['login'])){
     
     if(empty($formErrors)){
         //On récupère le hash de l'utilisateur
-       $hash = $user->getUserPasswordHash();
+       $hash = $Ehpad->getEhpadPasswordHash();
        //Si le hash correspond au mot de passe saisi
        if(password_verify($_POST['password'], $hash)){
            //On récupère son profil
-            $userProfil = $user->getUserProfile();
+            $ehpadProfil = $ehpad->getEhpadProfile();
             //On met en session ses informations
-            $_SESSION['profile']['id'] = $userProfil->id;
-            $_SESSION['profile']['username'] = $userProfil->username;
+            $_SESSION['profile']['id'] = $ehpadProfil->id;
+            $_SESSION['profile']['username'] = $ehpadProfil->ehpadname;
             //On redirige vers une autre page.
             header('location:index.php');
             exit();
        }else{
-           $formErrors['password'] = $formErrors['mail'] = LOGIN_ERROR;
+           $formErrors['password'] = $formErrors['email'] = LOGIN_ERROR;
        }
     }
 }

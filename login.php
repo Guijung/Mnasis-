@@ -1,5 +1,5 @@
 <?php
-include 'models/member.php';
+include 'models/ehpad.php';
 include 'controllers/login-controller.php';
 include 'parts/header.php';
 ?>
@@ -16,7 +16,7 @@ le container fluid occupe 100% de la page -->
     <!-- Start form -->
     <div class="col-10">
       <form method="post">
-        <div class="form-group text-white text-center">
+        <div class="form-group text-white">
           <label for="email">Email</label>
           <input type="email" class="form-control" id="email" name="email" required>
           <?php if (isset($formErrors['mail'])) { ?>
@@ -26,7 +26,7 @@ le container fluid occupe 100% de la page -->
           <?php } ?>
           <div class="invalid-feedback">Veuillez renseigner un email valide.</div>
         </div>
-        <div class="form-group text-white text-center">
+        <div class="form-group text-white">
           <label for="password">Mot de passe</label>
           <input type="password" class="form-control" id="password" name="password">
           <?php if (isset($formErrors['password'])) { ?>

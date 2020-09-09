@@ -1,7 +1,9 @@
 <?php
 include 'config.php';
-include 'models/member.php';
-include 'controllers/subscribe-members-controller.php';
+include 'models/ehpad.php';
+include 'lang/FR_FR.php';
+//include 'controllers/subscribe-members-controller.php';
+include 'controllers/register-ehpadCtrl.php';
 include 'parts/header.php';
 ?>
 <!-- Start container
@@ -11,7 +13,7 @@ le container fluid occupe 100% de la page -->
   <form action="register-ehpad.php" method="post">
     <div class="form-group  col-8 text-white text-center">
       <label for="name">Nom de l'établissement</label>
-      <input type="text" class="form-control" id="name" name="name">
+      <input type="text" class="form-control" id="name" name="name"/>
       <?php if (isset($formErrors['name'])) { ?>
         <p class="text-danger"><?= $formErrors['name'] ?></p>
       <?php } else { ?>
@@ -20,17 +22,17 @@ le container fluid occupe 100% de la page -->
     </div>
     <div class="form-group col-8">
       <label for="email">Email</label>
-      <input type="email" class="form-control" id="email" name="email">
+      <input type="email" class="form-control" id="email" name="email"/>
       <!--affiche erreur-->
-      <?php if (isset($formErrors['mail'])) { ?>
-        <p class="text-danger"><?= $formErrors['mail'] ?></p>
+      <?php if (isset($formErrors['email'])) { ?>
+        <p class="text-danger"><?= $formErrors['email'] ?></p>
       <?php } else { ?>
-        <small id="mailHelp" class="form-text text-muted">Merci de renseigner votre adresse messagerie</small>
+        <small id="emailHelp" class="form-text text-muted">Merci de renseigner votre adresse messagerie</small>
       <?php } ?>
     </div>
     <div class="form-group col-8">
       <label for="password">Mot de passe</label>
-      <input type="password" class="form-control" id="password" name="password">
+      <input type="password" class="form-control" id="password" name="password"/>
       <?php if (isset($formErrors['password'])) { ?>
         <p class="text-danger"><?= $formErrors['password'] ?></p>
       <?php } else { ?>
@@ -39,7 +41,7 @@ le container fluid occupe 100% de la page -->
     </div>
     <div class="form-group col-8">
       <label for="confirm-password">Confirmation mot de passe</label>
-      <input type="password" class="form-control" id="confirm-password" name="confirm-password">
+      <input type="password" class="form-control" id="confirm-password" name="passwordVerify"/>
       <?php if (isset($formErrors['passwordVerify'])) { ?>
         <p class="text-danger"><?= $formErrors['passwordVerify'] ?></p>
       <?php } else { ?>
@@ -48,7 +50,7 @@ le container fluid occupe 100% de la page -->
     </div>
     <div class="form-group col-8">
       <label for="city">Ville</label>
-      <input type="text" class="form-control" id="city" name="city">
+      <input type="text" class="form-control" id="city" name="city"/>
       <?php if (isset($formErrors['city'])) { ?>
         <p class="text-danger"><?= $formErrors['city'] ?></p>
       <?php } else { ?>
@@ -57,9 +59,9 @@ le container fluid occupe 100% de la page -->
     </div>
     <button class="btn btn-primary" type="submit" name="register">S'inscrire</button>
   </form>
-    <div class="col-4">
-      <img src="./assets/img/Mnesismess2.png" />
-    </div>
+  <div class="col-4">
+    <img src="./assets/img/Mnesismess2.png" />
+  </div>
 </div>
 <!-- End container -->
 <?php include 'parts/footer.php';

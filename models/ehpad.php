@@ -19,7 +19,7 @@ class ehpad{
         }
     }
 /**
- * Méthode permettant d'enregistrer un ehpad
+ * Méthode permettant d'enregistrer une ehpad
  * @return boolean
  */
     public function addEhpad(){
@@ -43,23 +43,23 @@ class ehpad{
      * @param array $field
      * @return boolean
      */
-    /*public function checkUserUnavailabilityByFieldName($field){
+    public function checkEhpadUnavailabilityByFieldName($field){
         $whereArray = [];
         foreach($field as $fieldName ){
             $whereArray[] = '`' . $fieldName . '` = :' . $fieldName;
         }
         $where = ' WHERE ' . implode(' AND ', $whereArray);
-        $checkUserUnavailabilityByFieldName = $this->db->prepare('
+        $checkEhpadUnavailabilityByFieldName = $this->db->prepare('
             SELECT COUNT(`id`) as `isUnavailable`
             FROM ' . $this->table
             . $where
         );
         foreach($field as $fieldName ){
-            $checkUserUnavailabilityByFieldName->bindValue(':'.$fieldName,$this->$fieldName,PDO::PARAM_STR);
+            $checkEhpadUnavailabilityByFieldName->bindValue(':'.$fieldName,$this->$fieldName,PDO::PARAM_STR);
         }
-        $checkUserUnavailabilityByFieldName->execute();
-        return $checkUserUnavailabilityByFieldName->fetch(PDO::FETCH_OBJ)->isUnavailable;
-    }*/
+        $checkEhpadUnavailabilityByFieldName->execute();
+        return $checkEhpadUnavailabilityByFieldName->fetch(PDO::FETCH_OBJ)->isUnavailable;
+    }
 
     /**
      * Méthode permettant de récupérer le hash du mot de passe de l'ehpad
@@ -81,7 +81,7 @@ class ehpad{
         }
     }
 /**
- * Méthode permettant de récupérer les différentes infos d'un ehpad
+ * Méthode permettant de récupérer les différentes infos d'une ehpad
  *
  * @return object
  */
