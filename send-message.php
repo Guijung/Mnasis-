@@ -14,7 +14,7 @@ le container fluid occupe 100% de la page -->
   <?php
   // si le message n'est pas envoyé affiche le form
   if (!$isMessageSent) {
-    // Tire un résident au hasard comme destinatire du messagge
+    // Tire un résident au hasard comme destinataire du messagge
     $resident = new resident();
     $randomResident = $resident->getRandomResident();
   ?>
