@@ -10,17 +10,18 @@ include 'parts/top-nav.php';
     <div class="row">
       <div class="col-12 col-md-6 order-md-2">
         <div class="px-2">
-          <img class="img-fluid" src="/assets/img/undraw_gradma_wanr.svg">
+          <img class="img-fluid" src="/assets/img/Mnesismess2.png">
         </div>
       </div>
       <div class="col-12 col-md-6 order-md-1">
         <div class="px-3">
-          <h1 class="text-uppercase">Ecrivez à une personne agée</h1>
-          <p>Donnez un peu de chaleur </p>
-          <a class="btn btn-primary" href="/send-message.php">Envoyez votre message</a>
-        </div>
+         <h1 class="text-center text-uppercase mb-5">Notre but</h1>
+          <p class="text-center w-50">Nous souhaitons permettre de diminuer l'isolement des personnes agées en ehpad en
+            le
+            permettant de recevoir des messages d'anonymes qu'ils peuvent découvrir chaque jours au sein de leur
+            établissements de retraites.</p>
+         </div>
       </div>
-
     </div>
   </div>
 </div>
@@ -31,10 +32,9 @@ include 'parts/top-nav.php';
     <div class="row">
       <div class="col-12">
         <div class="d-flex flex-column align-items-center px-3">
-          <h1 class="text-center text-uppercase mb-5">Notre but</h1>
-          <p class="text-center w-50">Nous souhaitons permettre de diminuer l'isolement des personnes agées en ehpad en le
-            permettant de recevoir des messages d'anonymes qu'ils peuvent découvrir chaque jours au sein de leur
-            établissements de retraites.</p>
+          <h1 class="text-uppercase">Ecrivez à une personne agée</h1>
+          <p>Juste quelques mots suffisent à faire sourire </p>
+          <a class="btn btn-mnesis btn-round" href="/send-message.php">Envoyez votre message</a>
         </div>
       </div>
     </div>

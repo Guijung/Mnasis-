@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
   <div class="container ">
     <diV class="logo">
-      <a class="navbar-brand" href="index.php">
-        <img src="./assets/img/logov1.png" alt="logo">
+      <a class="navbar-brand " href="index.php">
+        <img src="./assets/img/logov5.png" alt="logo">
       </a>
     </diV>
     <?php
