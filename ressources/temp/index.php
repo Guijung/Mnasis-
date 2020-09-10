@@ -1,7 +1,7 @@
 <?php
 include 'parts/header.php';
-include 'parts/top-nav.php';
 ?>
+
 
 
 <!-- Intro section -->
@@ -10,13 +10,13 @@ include 'parts/top-nav.php';
     <div class="row">
       <div class="col-12 col-md-6 order-md-2">
         <div class="px-2">
-          <img class="img-fluid" src="/assets/img/undraw_gradma_wanr.svg">
+          <img class="img-fluid" src="/assets/img/Mnesismess.png">
         </div>
       </div>
       <div class="col-12 col-md-6 order-md-1">
         <div class="px-3">
           <h1 class="text-uppercase">Ecrivez à une personne agée</h1>
-          <p>Donnez un peu de chaleur </p>
+          <p> </p>
           <a class="btn btn-primary" href="/send-message.php">Envoyez votre message</a>
         </div>
       </div>
@@ -32,9 +32,8 @@ include 'parts/top-nav.php';
       <div class="col-12">
         <div class="d-flex flex-column align-items-center px-3">
           <h1 class="text-center text-uppercase mb-5">Notre but</h1>
-          <p class="text-center w-50">Nous souhaitons permettre de diminuer l'isolement des personnes agées en ehpad en le
-            permettant de recevoir des messages d'anonymes qu'ils peuvent découvrir chaque jours au sein de leur
-            établissements de retraites.</p>
+          <p class="text-center w-50">Nous souhaitons permettre de diminuer l'impact l'isolement des personnes agées en ehpad en le
+            permettant de recevoir des messages d'anonymes puis privée par la suite.</p>
         </div>
       </div>
     </div>
@@ -88,8 +87,6 @@ include 'parts/top-nav.php';
   <!-- Fin Comment ca marche section -->
 
 </div>
-
-
 
 <?php include 'parts/footer.php';
 ?>
