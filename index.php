@@ -6,7 +6,7 @@ include 'parts/top-nav.php';
 
 <!-- Intro section -->
 <div class="py-4">
-  <div class="container-fluid">
+  <div class="container-lg">
     <div class="row">
       <div class="col-12 col-md-6 order-md-2">
         <div class="px-2">
@@ -15,12 +15,12 @@ include 'parts/top-nav.php';
       </div>
       <div class="col-12 col-md-6 order-md-1">
         <div class="px-3">
-         <h1 class="text-center text-uppercase mb-5">Notre but</h1>
+          <h1 class="text-center text-uppercase mb-5">Notre souhait ! </h1>
           <p class="text-center w-50">Nous souhaitons permettre de diminuer l'isolement des personnes agées en ehpad en
             le
             permettant de recevoir des messages d'anonymes qu'ils peuvent découvrir chaque jours au sein de leur
             établissements de retraites.</p>
-         </div>
+        </div>
       </div>
     </div>
   </div>
@@ -28,7 +28,7 @@ include 'parts/top-nav.php';
 <!-- Fin intro section -->
 <!-- But section section -->
 <div class="py-4 bg-light">
-  <div class="container-fluid">
+  <div class="container-lg">
     <div class="row">
       <div class="col-12">
         <div class="d-flex flex-column align-items-center px-3">
@@ -43,7 +43,7 @@ include 'parts/top-nav.php';
 <!-- Fin but section -->
 <!-- Comment ca marche section -->
 <div class="py-4">
-  <div class="container-fluid">
+  <div class="container-lg">
     <h1 class="text-center text-uppercase mb-5">Comment ça marche</h1>
     <div class="row my-5">
       <div class="col-12 col-md-6 order-md-2">
@@ -53,8 +53,8 @@ include 'parts/top-nav.php';
         </div>
       </div>
       <div class="col-12 col-md-6 order-md-1">
-        <div class="px-2">
-          <img class="img-fluid" src="/assets/img/undraw_text_field_htlv.svg">
+        <div class="px-2 text-center">
+          <img class="img-fluid" src="/assets/img/mamy1.png">
         </div>
       </div>
     </div>
@@ -86,10 +86,6 @@ include 'parts/top-nav.php';
     </div>
   </div>
   <!-- Fin Comment ca marche section -->
-
 </div>
-
-
-
 <?php include 'parts/footer.php';
 ?>
