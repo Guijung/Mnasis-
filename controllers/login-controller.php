@@ -27,17 +27,15 @@ if(isset($_POST['email'])){
        if(password_verify($_POST['password'], $hash)){
            //On récupère son profil
             $ehpadProfil = $ehpad->getEhpadProfile();
-            //$_SESSION['profile'] = array();
             //On met en session ses informations
             $_SESSION['profile']['id'] = $ehpadProfil->id;
-            //$_SESSION['profile']['username'] = $ehpadProfil->username;
+            $_SESSION['profile']['email'] = $ehpadProfil->email;
             //On redirige vers une autre page.
-            header('location:profile.php');
+            header('location:profile-ehpad.php');
             exit();
        }else{
            $formErrors['password'] = $formErrors['email'] = LOGIN_ERROR;
        }
     }
 
-    print_r($formErrors);
 }

@@ -10,14 +10,14 @@ include 'parts/top-nav.php';
 // si l'utilisateur est déjà connecté
 if(isset($_SESSION['profile'])) {
   // Redirection vers la page de profil
-  header('location:profile.php');
+  header('location:profile-ehpad.php');
   exit();
 }
 ?>
 
 <!-- Start container
 le container fluid occupe 100% de la page -->
-<div class="container-fluid">
+<div class="container-lg">
   <h1>Login</h1>
   <form method="post">
     <div class="form-group">
@@ -31,7 +31,7 @@ le container fluid occupe 100% de la page -->
       <div class="invalid-feedback">Veuillez renseigner un mot de passe valide</div>
       <small class="text-muted">Le mot de passe doit contenir au moins 8 caractères.</small>
     </div>
-    <button class="btn btn-primary" type="submit">S'identifier</button>
+    <button class="btn btn-mnesis btn-round" type="submit">S'identifier</button>
   </form>
 </div>
 <!-- End container -->

@@ -4,16 +4,17 @@ include 'lang/FR_FR.php';
 include 'config.php';
 include 'utils/sessions.php';
 include 'models/message.php';
+include 'controllers/messages-list-controller.php';
 include 'parts/header.php';
 include 'parts/top-nav.php';
 
 // cette page n'est accesible qu'après identification
 checkIfConnected();
 ?>
-<div class="container-fluid">
+<div class="container-lg">
   <h1>Vos messages</h1>
-  <a href="/messages-carousel.php">Démarrer le slideshow des messages pour vos résidents</a>
-  <table class="table table-striped">
+  <a class="btn btn-mnesis btn-round" href="/messages-carousel.php">Démarrer la diffusion des messages</a>
+  <table class="table table-striped table-responsive-sm">
     <thead>
       <tr>
         <th scope="col">Message</th>
@@ -25,16 +26,13 @@ checkIfConnected();
     </thead>
     <tbody>
       <?php
-        $message = new message();
-        $messages = $message->getAllMessagesByEhpad($_SESSION['profile']['id']);
-
-        for($i = 0; $i < count($messages); $i++) {
+        for($i = 0; $i < count($messagesList); $i++) {
           ?>
       <tr>
-        <td><?=$messages[$i]['message'];?></td>
-        <td><?=$messages[$i]['author'];?></td>
-        <td><?=$messages[$i]['date'];?></td>
-        <td><?=$messages[$i]['first_name'].' '.$messages[$i]['last_name'];?></td>
+        <td><?= $messagesList[$i]->message; ?></td>
+        <td><?= $messagesList[$i]->author; ?></td>
+        <td><?= $messagesList[$i]->date; ?></td>
+        <td><?= $messagesList[$i]->first_name.' '.$messagesList[$i]->last_name; ?></td>
         <td></td>
       </tr>
       <?php

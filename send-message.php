@@ -10,11 +10,11 @@ include 'parts/top-nav.php';
 
 <!-- Start container
 le container fluid occupe 100% de la page -->
-<div class="container-fluid">
+<div class="container-lg">
   <?php
   // si le message n'est pas envoyé affiche le form
   if (!$isMessageSent) {
-    // Tire un résident au hasard comme destinataire du messagge
+    // Tire un résident au hasard comme destinatire du messagge
     $resident = new resident();
     $randomResident = $resident->getRandomResident();
   ?>
@@ -46,7 +46,7 @@ le container fluid occupe 100% de la page -->
         <div class="invalid-feedback">Veuillez écrire un message.</div>
         <small class="text-muted">Maximum 255 charactères</small>
       </div>
-      <button class="btn btn-primary" type="submit" name="addMessage">Envoyer</button>
+      <button class="btn btn-mnesis btn-round" type="submit" name="addMessage">Envoyer</button>
     </form>
   <?php
     } else {
@@ -57,7 +57,7 @@ le container fluid occupe 100% de la page -->
   } else {
   ?>
   <p>Merci pour votre message !</p>
-  <a href="/send-message.php">Envoyer un nouveau message</a>
+  <a class="btn btn-mnesis btn-round" href="/send-message.php">Envoyer un nouveau message</a>
   <?php
   }
  ?>

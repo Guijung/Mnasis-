@@ -1,15 +1,15 @@
 <?php
 $formErrors = [];
 //Vérification du formulaire d'inscription
-if(isset($_POST['register'])){
+if(isset($_POST['registerEhpad'])){
     $ehpad = new ehpad();
     /**
      * Cette variable sert à savoir si les vérifications du mot de passe et de sa confirmation se sont déroulés avec succès
      */
     $isPasswordOk = true;
     if(!empty($_POST['email'])){
+        // Vérifie si le format de l'email est valide
         if(filter_var($_POST['email'],FILTER_VALIDATE_EMAIL)){
-            //J'hydrate mon instance d'objet user
             $ehpad->email = htmlspecialchars($_POST['email']);
         }else{
             $formErrors['email'] = EMAIL_ERROR_WRONG;
@@ -19,14 +19,12 @@ if(isset($_POST['register'])){
     }
 
     if(!empty($_POST['name'])){
-        //J'hydrate mon instance d'objet user
         $ehpad->name = htmlspecialchars($_POST['name']);
     }else{
-        $formErrors['name'] = NAME_ERROR_EMPTY;
+        $formErrors['name'] = EHPAD_NAME_ERROR_EMPTY;
     }
 
     if(!empty($_POST['city'])){
-        //J'hydrate mon instance d'objet user
         $ehpad->city = htmlspecialchars($_POST['city']);
     }else{
         $formErrors['city'] = CITY_ERROR_EMPTY;
@@ -60,7 +58,7 @@ if(isset($_POST['register'])){
         //Si c'est bon on ajoute l'ehpad
         if($isOk){
             $ehpad->addEhpad();
-            header('location:profile.php');
+            header('location:profile-ehpad.php');
             exit();
         }
     }

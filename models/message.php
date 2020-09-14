@@ -5,7 +5,8 @@ class message
   public $id = 0;
   public $message = '';
   public $author = '';
-  public $idResident = '';
+  public $idResident = 0;
+  public $idEhpad = 0;
   public $date = '';
   private $db = null;
   private $table = SQL_PREFIX . 'message';
@@ -44,15 +45,19 @@ class message
   /**
    * Méthode permettant de récupérer tous les messages d'une Ehpad
    */
-  public function getAllMessagesByEhpad($idEhpad)
+  public function getAllMessages()
   {
-    // Requète pour récupérer tous les messages + résident destinataire
+    // Requète pour récupérer tous les messages et résident destinataire
     $getAllMessages = $this->db->prepare('
-    SELECT t1.message, t1.author, t1.date, t2.first_name, t2.last_name FROM dp2020mns_message as t1, dp2020mns_ehpad_resident as t2, dp2020mns_ehpad as t3 WHERE t1.id_resident = t2.id AND t2.id_ehpad = :idEhpad ORDER by t1.date
+      SELECT t1.id, t1.message, t1.author, t1.date, t2.first_name, t2.last_name
+      FROM dp2020mns_message as t1
+      LEFT JOIN dp2020mns_ehpad_resident as t2 ON t1.id_resident = t2.id
+      WHERE t2.id_ehpad = 1
+      ORDER by t1.date
     ');
 
-    $getAllMessages->bindValue(':idEhpad', $idEhpad, PDO::PARAM_INT);
+    $getAllMessages->bindValue(':idEhpad', $this->idEhpad, PDO::PARAM_INT);
     $getAllMessages->execute();
-    return $getAllMessages->fetchAll();
+    return $getAllMessages->fetchAll(PDO::FETCH_OBJ);
   }
 }

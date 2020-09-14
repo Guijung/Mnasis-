@@ -7,7 +7,7 @@ class resident
   public $lastName = '';
   public $yearOfBirth = '';
   public $description = '';
-  public $idIpad = '';
+  public $idIpad = 0;
   private $db = null;
   private $table = SQL_PREFIX . 'ehpad_resident';
   private $tableEhpad = SQL_PREFIX . 'ehpad';
@@ -45,6 +45,43 @@ class resident
   }
 
   /**
+   * Méthode permettant de récupérer les différentes infos d'un resident
+   *
+   * @return object
+   */
+  public function getResidentProfile()
+  {
+    $getResidentProfile = $this->db->prepare(
+      'SELECT *
+      FROM ' . $this->table
+      . ' WHERE `id` = :id'
+    );
+    $getResidentProfile->bindValue(':id', $this->id, PDO::PARAM_INT);
+    $getResidentProfile->execute();
+    return $getResidentProfile->fetch(PDO::FETCH_OBJ);
+  }
+
+  /**
+   * Méthode permettant de modifier les infos d'une ehpad
+   *
+   * @return boolean
+   */
+  public function updateResident()
+  {
+    $updateResident = $this->db->prepare('
+      UPDATE ' . $this->table . '
+      SET `first_name`=:firstName, `last_name`=:lastName, `year_of_birth` =:yearOfBirth, `description`=:description
+      WHERE id = :id
+    ');
+    $updateResident->bindValue(':firstName', $this->firstName, PDO::PARAM_STR);
+    $updateResident->bindValue(':lastName', $this->lastName, PDO::PARAM_STR);
+    $updateResident->bindValue(':yearOfBirth', $this->yearOfBirth, PDO::PARAM_INT);
+    $updateResident->bindValue(':description', $this->description, PDO::PARAM_STR);
+    $updateResident->bindValue(':id', $this->id, PDO::PARAM_INT);
+    return $updateResident->execute();
+  }
+
+  /**
    * Méthode permettant de tirer au hasard un résident
    */
   public function getRandomResident()
@@ -72,17 +109,17 @@ class resident
   /**
    * Méthode permettant de récupérer tous les résidents d'une Ehpad
    */
-  public function getAllResidentsByEhpad($idEhpad)
+  public function getAllResidents()
   {
-    // Requète pour récupérer tous résident par ordre aplhabétiques
+    // Requète pour récupérer tous résident par ordre aplhabétique
     $getAllResidents = $this->db->prepare(
       'SELECT *,  YEAR(CURRENT_TIMESTAMP) - year_of_birth as age
      FROM ' . $this->table .
         ' WHERE id_ehpad = :idEhpad  ORDER BY LAST_NAME'
     );
 
-    $getAllResidents->bindValue(':idEhpad', $idEhpad, PDO::PARAM_INT);
+    $getAllResidents->bindValue(':idEhpad', $this->idEhpad, PDO::PARAM_INT);
     $getAllResidents->execute();
-    return $getAllResidents->fetchAll();
+    return $getAllResidents->fetchAll(PDO::FETCH_OBJ);
   }
 }

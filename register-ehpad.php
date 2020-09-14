@@ -10,7 +10,7 @@ include 'parts/top-nav.php';
 
 <!-- Start container
 le container fluid occupe 100% de la page -->
-<div class="container-fluid">
+<div class="container-lg">
   <h1>Créez votre compte</h1>
   <form method="post">
     <div class="form-group">
@@ -59,7 +59,7 @@ le container fluid occupe 100% de la page -->
       <small id="cityHelp" class="form-text text-muted">Merci de renseigner votre ville</small>
       <?php } ?>
     </div>
-    <button name="register" class="btn btn-primary" type="submit">S'inscrire</button>
+    <button name="registerEhpad" class="btn btn-mnesis btn-round" type="submit">S'inscrire</button>
   </form>
 </div>
 <!-- End container -->
