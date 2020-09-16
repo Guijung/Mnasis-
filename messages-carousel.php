@@ -37,7 +37,7 @@ checkIfConnected();
 // Carousel
 // Initialisations
 var currentMessageIndex = 0;
-// Recupère dans le document tous les élement .carousel-item
+// Recupère dans le document tous les élement de la div messages carousel-item
 var items = document.querySelectorAll('.messages-carousel-item');
 items[0].classList.add('active');
 
