@@ -104,6 +104,7 @@ class ehpad{
    *
    * @return boolean
    */
+  
   public function updateEhpad()
   {
     $updatedEhpad = $this->db->prepare('

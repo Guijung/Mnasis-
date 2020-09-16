@@ -9,23 +9,23 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <!-- collaspe content -->
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav justify-content-end w-100">
+  <div class="collapse navbar-collapse " id="navbarSupportedContent">
+    <ul class="navbar-nav justify-content-around w-100">
       <?php
       // Menu lorsque l'utilisateur est connecté
       if(isset($_SESSION['profile'])) {
     ?>
       <li class="nav-item">
-        <a class="nav-link0 " href="/profile-ehpad.php">Votre profil</a>
+        <a class="nav-link text-white" href="/profile-ehpad.php">Votre profil</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link1" href="/residents-list.php">Vos résidents</a>
+        <a class="nav-link" href="/residents-list.php">Vos résidents</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link3" href="/messages-list.php">Vos messages</a>
+        <a class="nav-link" href="/messages-list.php">Vos messages</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link4" href="/logout.php">Se déconnecter</a>
+        <a class="nav-link" href="/logout.php">Se déconnecter</a>
       </li>
       <?php
       // Menu par défault
