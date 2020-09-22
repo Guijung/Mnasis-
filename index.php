@@ -1,4 +1,7 @@
 <?php
+session_start();
+
+
 include 'parts/header.php';
 include 'parts/top-nav.php';
 ?>

@@ -1,4 +1,7 @@
 <?php
+session_start();
+
+
 include 'lang/FR_FR.php';
 include 'config.php';
 include 'models/resident.php';

@@ -23,3 +23,35 @@ function checkUnavailability(input){
     //Les données envoyées en POST. Elles sont séparées par un &
     request.send('fieldValue=' + input.value + '&fieldName=' + input.name);
 }
+$('#exampleModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget) // Button that triggered the modal
+    var resident = button.data('delete') // Extract info from data-* attributes
+    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+    var modal = $(this)
+    modal.find('.modal-title').text('New message to ' + resident)
+    modal.find('.modal-body input').val(resident)
+  })
+
+  // Carousel
+// Initialisations
+var currentMessageIndex = 0;
+// Recupère dans le document tous les élements de la div messages carousel-item
+var items = document.querySelectorAll('.messages-carousel-item');
+items[0].classList.add('active');
+
+// Affiche un message tous les 5 secondes
+setInterval(() => {
+  currentMessageIndex++;
+  // Modulo permet de cycler sur l'index
+  currentMessageIndex = currentMessageIndex % items.length;
+  for (var i = 0; i < items.length; i++) {
+    var el = items[i];
+    // Cache le message
+    el.classList.remove('active');
+    // Affiche le message correspondant à l'index courant
+    if (i == currentMessageIndex) {
+      el.classList.add('active');
+    }
+  }
+}, 5000)

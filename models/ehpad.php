@@ -94,7 +94,7 @@ class ehpad{
         FROM ' . $this->table
         . ' WHERE `email` = :email'
     );
-    $getEhpadProfile->bindValue(':email', $this->email, PDO::PARAM_INT);
+    $getEhpadProfile->bindValue(':email', $this->email, PDO::PARAM_STR);
     $getEhpadProfile->execute();
     return $getEhpadProfile->fetch(PDO::FETCH_OBJ);
   }
@@ -104,7 +104,6 @@ class ehpad{
    *
    * @return boolean
    */
-  
   public function updateEhpad()
   {
     $updatedEhpad = $this->db->prepare('

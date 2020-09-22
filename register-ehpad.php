@@ -5,11 +5,12 @@ include 'models/ehpad.php';
 include 'controllers/register-ehpad-controller.php';
 include 'parts/header.php';
 include 'parts/top-nav.php';
+include 'utils/function.php'
 ?>
 
 
 <!-- Start container
-le container fluid occupe 100% de la page -->
+le container lg  -->
 <div class="container-lg">
   <h1>Créez votre compte</h1>
   <form method="post">

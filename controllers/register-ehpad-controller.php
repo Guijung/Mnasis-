@@ -33,7 +33,19 @@ if(isset($_POST['registerEhpad'])){
     if(empty($_POST['password'])){
         $formErrors['password'] = PASSWORD_ERROR_EMPTY;
         $isPasswordOk = false;
+    } else { 
+        if (!preg_match("#[0-9]+#", $_POST['password'])) {
+            $formErrors['password'] = PASSWORD_ERROR_NOTFIGURE;
+            $isPasswordOk = false;
+        } else {
+            if (strlen($_POST['password']) < 8 ){
+                $formErrors['password'] = PASSWORD_ERROR_TOO_SHORT;
+                $isPasswordOk = false;
+            }
+        }
     }
+   
+
     if(empty($_POST['passwordVerify'])){
         $formErrors['passwordVerify'] = PASSWORDVERIFY_ERROR_EMPTY;
         $isPasswordOk = false;
@@ -57,9 +69,10 @@ if(isset($_POST['registerEhpad'])){
         }
         //Si c'est bon on ajoute l'ehpad
         if($isOk){
-            $ehpad->addEhpad();
+            $result = $ehpad->addEhpad();
+            //On met en session des informations
+            $_SESSION['profile']['email'] = $ehpad->email;
             header('location:profile-ehpad.php');
-            exit();
         }
     }
 }

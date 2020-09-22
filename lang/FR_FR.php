@@ -10,6 +10,8 @@ define('RESIDENT_FIRST_NAME_ERROR_EMPTY','Le prénom du résident ne doit pas ê
 define('RESIDENT_LAST_NAME_ERROR_EMPTY','Le nom du résident ne doit pas être vide.');
 define('RESIDENT_YEAR_OF_BIRTH_ERROR_EMPTY','L\'année de naissance du résident ne doit pas être vide.');
 define('RESIDENT_DESCRIPTION_ERROR_TOO_LONG','La description du résident ne doit pas dépasser 255 caractères.');
+define('PASSWORD_ERROR_TOO_SHORT', 'Le mot de passe est trop court, il doit contenir au moins 8 caractéres !');
+define('PASSWORD_ERROR_NOTFIGURE','Le mot de passe doit au moins contenir un chiffre');
 define('PASSWORD_ERROR_EMPTY','Le mot de passe ne doit pas être vide.');
 define('PASSWORDVERIFY_ERROR_EMPTY','Le mot de passe (confirmation) ne doit pas être vide.');
 define('PASSWORD_ERROR_NOTEQUAL','Les mots de passe ne sont pas identiques');

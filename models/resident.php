@@ -122,4 +122,13 @@ class resident
     $getAllResidents->execute();
     return $getAllResidents->fetchAll(PDO::FETCH_OBJ);
   }
+
+public function deleteresident() 
+{
+  $deleteResidentQuery = $this->db->prepare(
+      'DELETE FROM '. $this->table.'
+      WHERE `id` = :id');
+  $deleteResidentQuery->bindValue(':id', $this->id, PDO::PARAM_INT);
+  return  $deleteResidentQuery->execute();
+ }
 }
