@@ -26,14 +26,16 @@ checkIfConnected();
     </thead>
     <tbody>
       <?php
-        for($i = 0; $i < count($messagesList); $i++) {
+        foreach($messagesList = $message) {
           ?>
       <tr>
-        <td><?= $messagesList[$i]->message; ?></td>
-        <td><?= $messagesList[$i]->author; ?></td>
-        <td><?= $messagesList[$i]->date; ?></td>
-        <td><?= $messagesList[$i]->first_name.' '.$messagesList[$i]->last_name; ?></td>
+        <td><?= $message->message; ?></td>
+        <td><?= $message->author; ?></td>
+        <td><?= $message->date; ?></td>
+        <
         <td></td>
+        <td><a class="btn btn-mnesis btn-round" href="send-message.php?id=<?= $message->id ?>">Modifier</a></td>
+        <td><button class="btn btn-mnesis btn-round" data-toggle="modal" data-target="#delete-modal" data-delete="<?= $message->id ?>">Supprimer</button></td>
       </tr>
       <?php
         }

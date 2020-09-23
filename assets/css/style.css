@@ -18,6 +18,10 @@ h6 {
   font-size: 22px;
   color: #c7c7bf;
 }
+.container-lg {
+  /* Pour que footer reste en bas de la page si le contenu de la page est trop court */
+  min-height: calc(100vh - 434px);
+}
 
 
 /* Messages carousel */

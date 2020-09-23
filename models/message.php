@@ -55,9 +55,30 @@ class message
       WHERE t2.id_ehpad = 1
       ORDER by t1.date
     ');
-
     $getAllMessages->bindValue(':idEhpad', $this->idEhpad, PDO::PARAM_INT);
     $getAllMessages->execute();
     return $getAllMessages->fetchAll(PDO::FETCH_OBJ);
-  }
 }
+public function updateMessage()
+{
+  $updatemessage = $this->db->prepare('
+    UPDATE ' . $this->table . '
+    SET `message`=:message, `author`=:author, 
+    WHERE id = :id
+  ');
+  $updatemessage->bindValue(':firstName', $this->firstName, PDO::PARAM_STR);
+  $updatemessage->bindValue(':lastName', $this->lastName, PDO::PARAM_STR);
+  
+  $updatemessage->bindValue(':id', $this->id, PDO::PARAM_INT);
+  return $updatemessage->execute();
+}
+
+  public function deleteMessages(){
+    $deleteMessage = $this->db->prepare(
+    'DELETE FROM '.$this->table.'
+    WHERE `id` = :id');
+    $deleteMessage->bindValue(':id', $this->id, PDO::PARAM_INT);
+    return  $deleteMessage->execute();
+   }
+  }
+  

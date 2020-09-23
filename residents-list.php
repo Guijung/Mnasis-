@@ -35,9 +35,8 @@ checkIfConnected();
         <td><?= $resident->age; ?></td>
         <td><?= $resident->description; ?></td>
         <td><a class="btn btn-mnesis btn-round" href="update-resident.php?id=<?= $resident->id ?>">Modifier</a></td>
-        <td><button class="btn btn-mnesis btn-round" data-toggle="modal" data-target="#delete-modal" data-delete="<?= $resident->id ?>">Supprimer</button></td>
-        
-      </tr>
+        <td><button class="btn btn-mnesis btn-round" data-toggle="modal" data-target="#delete-modal" data-delete="<?= $resident->id ?>" data-lastname="<?= $resident->last_name ?>" data-firstname="<?= $resident->first_name ?>">Supprimer</button></td>
+        </tr>
       <?php
         }
         ?>
@@ -54,14 +53,12 @@ checkIfConnected();
         </button>
       </div>
       <div class="modal-body">
-        <p>
-      <script> </script> 
-      </p>
+        <p id="messageModal"></p>
       </div>
       <div class="modal-footer">
-        <form>
-          <input type="hidden" id="delete-resident" value="">
-        <button type="submit" class="btn btn-secondary">Oui</button>
+        <form method="post">
+          <input type="hidden" id="delete-resident" name="residentid" value="">
+        <button type="submit" class="btn btn-secondary" name="idResident">Oui</button>
         </form>
        
         <button type="button" class="btn btn-primary" data-dismiss="modal">Non</button>

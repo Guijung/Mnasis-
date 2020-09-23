@@ -23,14 +23,15 @@ function checkUnavailability(input){
     //Les données envoyées en POST. Elles sont séparées par un &
     request.send('fieldValue=' + input.value + '&fieldName=' + input.name);
 }
-$('#exampleModal').on('show.bs.modal', function (event) {
-    var button = $(event.relatedTarget) // Button that triggered the modal
-    var resident = button.data('delete') // Extract info from data-* attributes
-    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+$('#delete-modal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget) // Bouton supprimer qui a provoqué l'action
+    var residentId = button.data('delete') // Récupération de l'id du résident dans data-delete
+    var residentLastname = button.data('lastname')
+    var residentFirstname = button.data('firstname');
+    document.getElementById('messageModal').innerHTML = 'Etes vous sur de vouloir supprimer ' + residentLastname + residentFirstname; //Message dans la modal
     var modal = $(this)
-    modal.find('.modal-title').text('New message to ' + resident)
-    modal.find('.modal-body input').val(resident)
+    modal.find('input').val(residentId)
+    console.log(residentId);
   })
 
   // Carousel

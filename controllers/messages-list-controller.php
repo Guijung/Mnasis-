@@ -5,4 +5,10 @@ $message = new message();
 $message->idEhpad = $_SESSION['profile']['id'];
 
 $messagesList = $message->getAllMessages();
+
+if(isset($_POST['residentid'])){
+  $resident->id = $_POST['residentid'];
+  $resident->deleteMessages()();
+}
+
 ?>
