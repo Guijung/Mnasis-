@@ -1,28 +1,28 @@
 body {
   font-family: "Luciole", Arial, Helvetica, sans-serif;
 }
-h6 {
-  color: #c67c53; 
+
+h1 {
+  color: #bd7c31;
 }
-.title {
-  color: #c67c53;
+
+.container-lg {
+  /* Pour que footer reste en bas de la page si le contenu de la page est trop court */
+  min-height: calc(100vh - 434px);
 }
+
 /* top nav bar */
 .nav-logo {
   width: 200px;
   /* garde le ratio de l'image selon la width */
  /* height: auto; */
 }
+
 .nav-link {
   font-family: "Luciole", Arial, Helvetica, sans-serif;
   font-size: 22px;
   color: #c7c7bf;
 }
-.container-lg {
-  /* Pour que footer reste en bas de la page si le contenu de la page est trop court */
-  min-height: calc(100vh - 434px);
-}
-
 
 /* Messages carousel */
 
@@ -106,10 +106,9 @@ h6 {
   color: #ffffff;
   background-color: #16619c;
 }
-/*CSS Footer*/
+/*Footer*/
 .site-footer
 {
-  background-color:#26272b;
   padding:45px 0 20px;
   font-size:15px;
   line-height:24px;

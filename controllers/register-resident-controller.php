@@ -36,5 +36,7 @@ if(isset($_POST['register'])){
   if(empty($formErrors)){
     // On ajoute le résident
     $resident->addResident();
+    // Redirection vers la liste des résidents
+    header('location:residents-list.php');
   }
 }

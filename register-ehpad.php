@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'lang/FR_FR.php';
 include 'config.php';
 include 'models/ehpad.php';
@@ -10,7 +11,7 @@ include 'utils/function.php'
 
 
 <!-- Start container
-le container lg  -->
+le container fluid occupe 100% de la page -->
 <div class="container-lg">
   <h1>Créez votre compte</h1>
   <form method="post">

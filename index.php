@@ -1,7 +1,5 @@
 <?php
 session_start();
-
-
 include 'parts/header.php';
 include 'parts/top-nav.php';
 ?>
@@ -11,7 +9,7 @@ include 'parts/top-nav.php';
     <div class="row align-items-center">
       <div class="col-12 col-md-6 order-md-2">
         <div class="px-2 text-center text-md-left">
-          <img class="img-fluid" src="/assets/img/Mnesismess4.png">
+          <img class="img-fluid" src="/assets/img/Mnesistotem2.png">
         </div>
       </div>
       <div class="col-12 col-md-6 order-md-1">

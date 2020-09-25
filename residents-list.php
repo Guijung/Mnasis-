@@ -14,15 +14,15 @@ checkIfConnected();
 <div class="container-lg">
   <h1 class="title">Vos résidents</h1>
   <a class="btn btn-mnesis btn-round" href="/register-resident.php">Ajouter un résident</a>
- 
-  <table class="table table-striped table-responsive-sm">
+
+  <table class="table table-striped table-responsive-sm mt-3">
     <thead>
       <tr>
         <th scope="col">Nom</th>
         <th scope="col">Prénom</th>
         <th scope="col">Age</th>
         <th scope="col">Description</th>
-        <th scope="col">action</th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
@@ -35,7 +35,7 @@ checkIfConnected();
         <td><?= $resident->age; ?></td>
         <td><?= $resident->description; ?></td>
         <td><a class="btn btn-mnesis btn-round" href="update-resident.php?id=<?= $resident->id ?>">Modifier</a></td>
-        <td><button class="btn btn-mnesis btn-round" data-toggle="modal" data-target="#delete-modal" data-delete="<?= $resident->id ?>" data-lastname="<?= $resident->last_name ?>" data-firstname="<?= $resident->first_name ?>">Supprimer</button></td>
+        <td><button class="btn btn-mnesis btn-round" data-toggle="modal" data-target="#delete-resident-modal" data-delete="<?= $resident->id; ?>" data-lastname="<?= $resident->last_name; ?>" data-firstname="<?= $resident->first_name; ?>">Supprimer</button></td>
         </tr>
       <?php
         }
@@ -43,7 +43,7 @@ checkIfConnected();
     </tbody>
   </table>
 </div>
-<div class="modal" tabindex="-1" role="dialog" id="delete-modal">
+<div class="modal" tabindex="-1" role="dialog" id="delete-resident-modal">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -57,11 +57,11 @@ checkIfConnected();
       </div>
       <div class="modal-footer">
         <form method="post">
-          <input type="hidden" id="delete-resident" name="residentid" value="">
-        <button type="submit" class="btn btn-secondary" name="idResident">Oui</button>
+          <input type="hidden" id="delete-resident" name="idResident" value="">
+          <button type="submit" class="btn btn-mnesis btn-round">Oui</button>
         </form>
-       
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Non</button>
+
+        <button type="button" class="btn btn-outline-mnesis btn-round" data-dismiss="modal">Non</button>
       </div>
     </div>
   </div>

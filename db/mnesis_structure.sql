@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le :  mar. 08 sep. 2020 à 11:29
+-- Généré le :  mer. 16 sep. 2020 à 15:01
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.4.2
 
@@ -33,7 +33,7 @@ CREATE TABLE `dp2020mns_ehpad` (
   `password` varchar(255) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
   `city` varchar(50) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -49,7 +49,7 @@ CREATE TABLE `dp2020mns_ehpad_resident` (
   `year_of_birth` year(4) DEFAULT NULL,
   `description` varchar(255) NOT NULL,
   `id_ehpad` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -65,7 +65,7 @@ CREATE TABLE `dp2020mns_message` (
   `author` varchar(255) DEFAULT NULL,
   `city` varchar(255) DEFAULT NULL,
   `date` date NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Index pour les tables déchargées
@@ -81,13 +81,15 @@ ALTER TABLE `dp2020mns_ehpad`
 -- Index pour la table `dp2020mns_ehpad_resident`
 --
 ALTER TABLE `dp2020mns_ehpad_resident`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_ehpad` (`id_ehpad`);
 
 --
 -- Index pour la table `dp2020mns_message`
 --
 ALTER TABLE `dp2020mns_message`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_resident` (`id_resident`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -110,6 +112,22 @@ ALTER TABLE `dp2020mns_ehpad_resident`
 --
 ALTER TABLE `dp2020mns_message`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `dp2020mns_ehpad_resident`
+--
+ALTER TABLE `dp2020mns_ehpad_resident`
+  ADD CONSTRAINT `dp2020mns_ehpad_resident_ibfk_1` FOREIGN KEY (`id_ehpad`) REFERENCES `dp2020mns_ehpad` (`id`) ON DELETE CASCADE;
+
+--
+-- Contraintes pour la table `dp2020mns_message`
+--
+ALTER TABLE `dp2020mns_message`
+  ADD CONSTRAINT `dp2020mns_message_ibfk_1` FOREIGN KEY (`id_resident`) REFERENCES `dp2020mns_ehpad_resident` (`id`) ON DELETE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

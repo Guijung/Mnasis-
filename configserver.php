@@ -5,4 +5,3 @@ define('SQL_DBNAME', 'c64mnosis');
 define('SQL_USER', 'c64guillaumej');
 define('SQL_PWD', 'edzRcJE#8');
 define('SQL_PREFIX', 'dp2020mns_');
-

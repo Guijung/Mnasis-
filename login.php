@@ -6,13 +6,11 @@ include 'models/ehpad.php';
 include 'controllers/login-controller.php';
 include 'parts/header.php';
 include 'parts/top-nav.php';
-include 'utils/function.php';
 
 // si l'utilisateur est déjà connecté
 if(isset($_SESSION['profile'])) {
   // Redirection vers la page de profil
   header('location:profile-ehpad.php');
-  exit();
 }
 ?>
 

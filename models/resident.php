@@ -54,7 +54,7 @@ class resident
     $getResidentProfile = $this->db->prepare(
       'SELECT *
       FROM ' . $this->table
-      . ' WHERE `id` = :id'
+        . ' WHERE `id` = :id'
     );
     $getResidentProfile->bindValue(':id', $this->id, PDO::PARAM_INT);
     $getResidentProfile->execute();
@@ -88,8 +88,8 @@ class resident
   {
     // Age est calculé dans la requête / on soustrait la date actuel à la date indiquée dans la base de donnée
     $getRandomResident = $this->db->prepare(
-      'SELECT t1.*,  YEAR(CURRENT_TIMESTAMP) - year_of_birth as age, t2.name, t2.city
-        FROM ' . $this->table . ' as t1, ' . $this->tableEhpad .  ' as t2
+      'SELECT t1.*,  YEAR(CURRENT_TIMESTAMP) - year_of_birth AS age, t2.name, t2.city
+        FROM ' . $this->table . ' AS t1, ' . $this->tableEhpad . ' AS t2
         WHERE t1.id_ehpad = t2.id'
     );
     $getRandomResident->execute();
@@ -113,7 +113,7 @@ class resident
   {
     // Requète pour récupérer tous résident par ordre aplhabétique
     $getAllResidents = $this->db->prepare(
-      'SELECT *,  YEAR(CURRENT_TIMESTAMP) - year_of_birth as age
+      'SELECT *,  YEAR(CURRENT_TIMESTAMP) - year_of_birth AS age
      FROM ' . $this->table .
         ' WHERE id_ehpad = :idEhpad  ORDER BY LAST_NAME'
     );
@@ -122,13 +122,16 @@ class resident
     $getAllResidents->execute();
     return $getAllResidents->fetchAll(PDO::FETCH_OBJ);
   }
-
-public function deleteresident() 
-{
-  $deleteResidentQuery = $this->db->prepare(
-      'DELETE FROM '. $this->table.'
-      WHERE `id` = :id');
-  $deleteResidentQuery->bindValue(':id', $this->id, PDO::PARAM_INT);
-  return  $deleteResidentQuery->execute();
- }
+  /**
+   * Méthode permettant de suprimer un résident
+   */
+  public function deleteResident()
+  {
+    $deleteResidentQuery = $this->db->prepare(
+      'DELETE FROM ' . $this->table . '
+      WHERE `id` = :id'
+    );
+    $deleteResidentQuery->bindValue(':id', $this->id, PDO::PARAM_INT);
+    return  $deleteResidentQuery->execute();
+  }
 }

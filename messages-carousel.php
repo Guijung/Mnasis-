@@ -33,30 +33,9 @@ checkIfConnected();
   ?>
 </div>
 
-<script type="text/javascript">
-// Carousel
-// Initialisations
-var currentMessageIndex = 0;
-// Recupère dans le document tous les élement de la div messages carousel-item
-var items = document.querySelectorAll('.messages-carousel-item');
-items[0].classList.add('active');
-
-// Affiche un message tous les 5 secondes
-setInterval(() => {
-  currentMessageIndex++;
-  // Modulo permet de cycler sur l'index
-  currentMessageIndex = currentMessageIndex % items.length;
-  for (var i = 0; i < items.length; i++) {
-    var el = items[i];
-    // Cache le message
-    el.classList.remove('active');
-    // Affiche le message correspondant à l'index courant
-    if (i == currentMessageIndex) {
-      el.classList.add('active');
-    }
-  }
-}, 5000)
-</script>
-
-<?php include 'parts/footer.php';
-?>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script  type="text/javascript" src="./assets/js/script.js"></script>
+</body>
+</html>

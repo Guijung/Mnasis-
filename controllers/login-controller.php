@@ -1,5 +1,4 @@
 <?php
-
 $formErrors = [];
 //Vérification du formulaire de connexion
 if(isset($_POST['email'])){
@@ -32,10 +31,8 @@ if(isset($_POST['email'])){
             $_SESSION['profile']['email'] = $ehpadProfil->email;
             //On redirige vers une autre page.
             header('location:profile-ehpad.php');
-            exit();
        }else{
            $formErrors['password'] = $formErrors['email'] = LOGIN_ERROR;
        }
     }
-
 }
