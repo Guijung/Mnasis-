@@ -37,7 +37,7 @@ checkIfConnected();
         <td></td>
         <td><button class="btn btn-mnesis btn-round" data-toggle="modal" data-target="#delete-message-modal"
             data-delete="<?= $message->id; ?>" data-author="<?= $message->author; ?>"
-            data-destinataire="<?= $message->destinataire; ?>">Supprimer</button></td>
+           >Supprimer</button></td>
       </tr>
       <?php
         }
