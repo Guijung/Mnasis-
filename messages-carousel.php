@@ -22,11 +22,11 @@ checkIfConnected();
       <p class="h1 text-primary"><?=$messagesList[$i]->first_name.' '.$messagesList[$i]->last_name;?></p>
       <p class="messages-carousel-message"><?=$messagesList[$i]->message;?></p>
       <p class="h4 text-italic text-black-50">Envoyé par:</p>
-      <p class="h3"><?=$messagesList[$i]->author;?>
+      <p class="h3"><?=$messagesList[$i]->author;?></p>
     </div>
   </div>
-  <a class="messages-carousel-logo" href="/profile-ehpad.php">
-    <img src="./assets/img/logov1.png" alt="logo">
+  <a class="messages-carousel-logo" href="/profile-ehpad.php">retour profil
+    <img src="./assets/img/avatar headmamy.png" alt="logo">
   </a>
   <?php
   }
